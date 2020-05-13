@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
         <link rel="stylesheet" href='assets/cache/css_03_home.min.css'/>
+        <link rel="stylesheet" href='assets/cache/utility.css'/>
     </head>
     <body>
         <header class="header">
@@ -137,7 +138,7 @@
         </header>
         <main>
 
-
+        
             <div class="limiter">
                 <div class="container-login100">
                     <div class="wrap-login100">
@@ -150,28 +151,36 @@
                             </span>
 
 
-                            <div class="wrap-input100 validate-input">
-                                <input class="input100" type="text" name="usuario">
-                                <span class="focus-input100" data-placeholder="Usuario"></span>
+                            <div class="wrap-input100 validate-input" data-validate = "Ingresa un usuario" required>
+                                <input class="input100" type="text" name="usuario" id='nombre' required>
+                                <span class="focus-input100" data-placeholder="Nombre"></span>
                             </div>
         
-                            <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                                <input class="input100" type="text" name="email">
+                            <div class="wrap-input100 validate-input" data-validate = "Ingresa un email valido: a@b.c" required>
+                                <input class="input100" type="text" name="email" id='email' required>
                                 <span class="focus-input100" data-placeholder="Email"></span>
                             </div>
         
-                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <div class="wrap-input100 validate-input" data-validate="Ingresa una contraseña" required>
                                 <span class="btn-show-pass">
                                     <i class="zmdi zmdi-eye"></i>
                                 </span>
-                                <input class="input100" type="password" name="pass">
+                                <input class="input100" type="password" name="password" id="password" required>
                                 <span class="focus-input100" data-placeholder="Contraseña"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="Ingresa una contraseña">
+                                <span class="btn-show-pass">
+                                    <i class="zmdi zmdi-eye"></i>
+                                </span>
+                                <input class="input100" type="password" name="verifyPassword" id="verifyPassword" required>
+                                <span class="focus-input100" data-placeholder="Confirma tu constraseña"></span>
                             </div>
         
                             <div class="container-login100-form-btn">
                                 <div class="wrap-login100-form-btn">
                                     <div class="login100-form-bgbtn"></div>
-                                    <button class="login100-form-btn">
+                                    <button class="login100-form-btn" id="btn-registrar">
                                         Entrar
                                     </button>
                                 </div>
@@ -190,6 +199,7 @@
                     </div>
                 </div>
             </div>
+
             
 
 
@@ -236,5 +246,6 @@
         </footer>
         <div class='se-pre-con'></div>
         <script src='assets/cache/js_03_home.min.js'></script>
+        <script src='assets/js/registro.js' ></script>
     </body>
 </html>
