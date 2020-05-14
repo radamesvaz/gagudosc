@@ -108,27 +108,14 @@
                                 <i class="fa fa-search" aria-hidden="true"></i>
                                 <input type="submit" class="submit" value="">
                             </form>
-                            <div class="lang-menu-wr">
-                                <button class="btn lang-toggle">
-                                    <span>EN</span>
-                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                </button>
-                                <ul class="lang-menu">
-                                    <li>
-                                        <a href="#">EN</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">HR</a>
-                                    </li>
-                                    <li>
-                                        <a href="03_Home.rtl.html">AR</a>
-                                    </li>
-                                </ul>
-                            </div>
+
+                            <div id='login-info'>
                             <a href="Log_In.html" class="login d-flex align-items-center">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span>Log In</span>
                             </a>
+                         </div>
+
                         </div>
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </div>
@@ -151,7 +138,7 @@
                             </span>
         
                             <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                                <input class="input100" type="text" name="email">
+                                <input class="input100" type="text" name="email" id='email-signin'>
                                 <span class="focus-input100" data-placeholder="Email"></span>
                             </div>
         
@@ -159,7 +146,7 @@
                                 <span class="btn-show-pass">
                                     <i class="zmdi zmdi-eye"></i>
                                 </span>
-                                <input class="input100" type="password" name="pass">
+                                <input class="input100" type="password" name="pass" id='password-signin'>
                                 <span class="focus-input100" data-placeholder="Contraseña"></span>
                             </div>
         
@@ -167,7 +154,7 @@
                             <div class="container-login100-form-btn">
                                 <div class="wrap-login100-form-btn">
                                     <div class="login100-form-bgbtn"></div>
-                                    <button class="login100-form-btn">
+                                    <button class="login100-form-btn" id='btn-ingresar'>
                                         Entrar
                                     </button>
                                 </div>
@@ -232,5 +219,7 @@
         </footer>
         <div class='se-pre-con'></div>
         <script src='assets/cache/js_03_home.min.js'></script>
+        <script src='assets/js/main.js'></script>
+
     </body>
 </html>

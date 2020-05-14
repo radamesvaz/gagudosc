@@ -1,8 +1,11 @@
 const btnRegistro = document.getElementById('btn-registrar');
-const nombre = document.getElementById('nombre');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+const nombreRegistro = document.getElementById('nombre');
+const emailRegistro = document.getElementById('email');
+const passwordRegistro = document.getElementById('password');
 const verifyPassword = document.getElementById('verifyPassword');
+
+
+
 
 const registrar = (event) => {
     event.preventDefault();
@@ -14,7 +17,7 @@ const registrar = (event) => {
     // -------------------- Verificando campos
 
     // verificando email
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailRegistro.value))
   {
     emailCheck = true;
   } else {
@@ -22,30 +25,46 @@ const registrar = (event) => {
   }
 
   // verificando que las contraseás coincidan
-  if(password.value === verifyPassword.value){
+  if(passwordRegistro.value === verifyPassword.value){
     passwordMatch = true
 } else{
     passwordMatch = false
 }
 
     //Verificando usuario
-if(nombre.value == ''){
+if(nombreRegistro.value == ''){
     usuarioCheck = false;
 }else{
     usuarioCheck = true
 }
 
     if(usuarioCheck == true && emailCheck == true &&passwordMatch == true){
-        console.log('todos los campos son validos');
+        const data = { email: emailRegistro.value, 
+            usuario: nombreRegistro.value,
+            password: passwordRegistro.value }
+        const options = {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+        },
+            body: JSON.stringify(data)
+        };
+        fetch('http://localhost:3000/registro', options)
+        .then(data => {
+            return data.json()
+            }).then(console.log);
+
+            emailRegistro.value='';
+            nombreRegistro.value='';
+            passwordRegistro.value='';
+            verifyPassword.value='';
     }else{
         console.log('campos incorrectos');
     }
 
 
 }
-    
-
-
+        
 
 
 btnRegistro.addEventListener("click", registrar);
