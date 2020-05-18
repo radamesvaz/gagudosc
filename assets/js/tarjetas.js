@@ -22,17 +22,29 @@ window.addEventListener('load',
                     pTitulo.className='title';
                     pTitulo.textContent= res[i].nombre;
 
+                let pEdad = document.createElement('p');
+                    pEdad.textContent = ('Edad: ');
+
+                let pDesc = document.createElement('p');
+                    pDesc.textContent = ('Ubicación: ');
+
+                let pTelefono = document.createElement('p');
+                    pTelefono.textContent = ('Telefono: ');
+
+                let pEdadSpan = document.createElement('span');
+                    pEdadSpan.textContent = res[i].edad;
+
+                let pDescSpan = document.createElement('span');
+                    pDescSpan.textContent = res[i].localizacion;
+
+                let pTelefonoSpan = document.createElement('span');
+                    pTelefonoSpan.textContent = res[i].telefono;
+
                 let img = document.createElement('img');
                     img.src=res[i].fotos;
                     img.alt="best-image";
                     img.className="model-item";
-/*
-                let div4 = document.createElement('div');
-                    div4.className="card-top-body";                               
 
-                let div5 = document.createElement('div');
-                    div5.className="card-img-overlay product-detail";
-*/
                 let a = document.createElement('a');
                     a.target="_blank";
                     a.href=res[i].link;
@@ -40,11 +52,17 @@ window.addEventListener('load',
                     a.style=`background-image: url(${res[i].fotos}) `;
                     a.className='model-item';
 
-                  //  img.appendChild(div5);
-                   // div4.appendChild(img);
-                   // a.appendChild(div4);
-                   // div3.appendChild(a);
 
+
+                pEdad.appendChild(pEdadSpan);
+                pDesc.appendChild(pDescSpan);
+                pTelefono.appendChild(pTelefonoSpan);
+
+
+
+                div3.appendChild(pEdad);
+                div3.appendChild(pDesc);
+                div3.appendChild(pTelefono);
                 a.appendChild(pTitulo);
                  a.appendChild(div3);
                 div2.appendChild(a);
