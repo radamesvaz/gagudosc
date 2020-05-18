@@ -605,6 +605,16 @@ pre code {
     margin-left: -15px
 }
 
+.row-profile{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 30px;
+}
+
 .no-gutters {
     margin-right: 0;
     margin-left: 0
@@ -13226,6 +13236,7 @@ body.light {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
+    margin-top: 36px;
 }
 
 .profile-entry .profile-title {

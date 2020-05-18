@@ -1,5 +1,9 @@
 
 
+// ------------------- Creando SessionStorage
+
+
+
 
 //--------------------------- Creando el menu --------------------
 
@@ -51,7 +55,7 @@ const loadingHeader = () =>{
             liNav2.className = 'menu-item';
 
         let aListTarjetas = document.createElement('a');
-            aListTarjetas.href='index.html';
+            aListTarjetas.href='tarjetas.html';
             aListTarjetas.textContent='Ver Tarjetas';
             aListTarjetas.target='_self';
 
@@ -59,7 +63,7 @@ const loadingHeader = () =>{
             liNav3.className = 'menu-item';
 
         let aListRegistro = document.createElement('a');
-            aListRegistro.href='index.html';
+            aListRegistro.href='Register.html';
             aListRegistro.textContent='Registrarse';
             aListRegistro.target='_self';
 
@@ -67,8 +71,8 @@ const loadingHeader = () =>{
             liNav4.className = 'menu-item';
 
         let aListLogin = document.createElement('a');
-            aListLogin.href='index.html';
-            aListLogin.textContent='Iniciar Sesión';
+            aListLogin.href='Log_In.html';
+            aListLogin.textContent=sessionStorage.getItem('nombre');
             aListLogin.target='_self';
 
 
@@ -118,31 +122,6 @@ window.addEventListener('load', loadingHeader());
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sessionStorage.setItem('isSignedIn', 'false');
-sessionStorage.setItem('nombre', '');
-sessionStorage.setItem('userId', '');
-
-console.log(sessionStorage);
-
-
-
 const removeElementsByClass = (elementName) => {
     let elements = document.getElementsByClassName(elementName);
     while(elements.length > 0){
@@ -177,17 +156,20 @@ const ingresar = (event) => {
             return data.json()
             }).then(user => {
 
-                sessionStorage.setItem('userId', user.id);
+                localStorage.setItem('userId', user.id);
                 sessionStorage.setItem('nombre', user.nombre);
-                sessionStorage.setItem('isSignedIn', 'true');
-                console.log(sessionStorage);
-                if(sessionStorage.getItem('isSignedIn') == 'true'){
-                    removeElementsByClass('login d-flex align-items-center');
-                    let divNombre = document.createElement('p');
-                    divNombre.textContent= 'Bienvenido ' + user.nombre
-                    loginInfo.appendChild(divNombre);
-
-                }
+                localStorage.setItem('isSignedIn', 'true');
+                sessionStorage.setItem('edad', user.edad);
+                sessionStorage.setItem('titulo', user.titulo);
+                sessionStorage.setItem('descripcion', user.descripcion);
+                sessionStorage.setItem('telefono', user.telefono);
+                sessionStorage.setItem('localizacion', user.localizacion);
+                sessionStorage.setItem('disponibilidad', user.disponibilidad);
+                sessionStorage.setItem('tags', user.tags);
+                sessionStorage.setItem('tarifas', user.tarifas);
+                sessionStorage.setItem('metodospago', user.metodospago);
+                window.open("perfil.html", '_self' );
+                
             })
             
 
@@ -216,3 +198,11 @@ $('.input100').each(function(){
         }
     })    
 })
+
+
+
+// ------------------------------- Perfil -------------------------------------
+
+
+
+    
