@@ -15981,3 +15981,21 @@ body.light {
     z-index: 9999;
     background: url(../img/demo/loader/Preloader_1.gif) center no-repeat #FFF;
 }
+
+/*-------------------- Buscador de Tarjetas-------------------- */
+
+.parent-campo-buscar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.campo-buscar{
+    padding: 3px;
+    border: 1px solid #ff8500;
+    border-radius: 25px;
+    background-color: #222222;
+    color: white;
+    
+}

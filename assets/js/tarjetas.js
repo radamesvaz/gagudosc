@@ -1,3 +1,13 @@
+//------------------------------ Estado en el que se va a guardar la informacion de cada persona
+
+const state ={
+    searchField: '',
+     
+}
+
+
+// -------------------------------- Cargando las tarjetas
+
 let resultado = document.getElementById('id-tarjetas');
 
 window.addEventListener('load', 
@@ -9,8 +19,8 @@ window.addEventListener('load',
     .then(data => {
         return data.json()
         }).then( res => {
-            for(let i = 0; i < res.length; i++){
-
+            state.nuevoEstadoTarjetas = res;
+            for(let i = 0; i<state.nuevoEstadoTarjetas.length; i++){
                 let div2 = document.createElement('div');
                     div2.className="item-wr";
 
@@ -71,7 +81,25 @@ window.addEventListener('load',
                 
             }
 
-        });
+        })
             
 
   }, false);
+
+
+
+// --------------------- Buscador
+
+let buscadorTarjetas = document.getElementById('buscador-tarjetas');
+
+
+const buscarTarjetas = (event) => {
+    state.searchField = event.target.value;
+    //console.log(escortsFiltradas);
+}
+/*
+const escortsFiltradas = state.nuevoEstadoTarjetas.filter(i =>{
+    return i.nombre.toLowerCase().includes(state.searchField.toLowerCase());
+  });
+*/
+document.addEventListener('keyup', buscarTarjetas);
