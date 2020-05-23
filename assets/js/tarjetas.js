@@ -80,21 +80,8 @@ const crearTarjetas = (e) => {
 const openModal = (e) => {
 
     removeElementsByClass('item-wr slick-slide slick-current slick-active');
-    
-    for(let i = 0; i < state.galeriaImagenes.length; i++){
-        if( e == state.galeriaImagenes[i].id){
-            let propValue;
-                for(let propName in state.galeriaImagenes[i]) {
-                    propValue = state.galeriaImagenes[i][propName]
 
-                    console.log(propName,propValue);
-                }
-          //  console.log(state.galeriaImagenes[i])
-        }
-        }
-    
-
-  /*  modal.style.display = 'block';
+     modal.style.display = 'block';
 
     let slider = document.getElementById('profile-slider');
 
@@ -122,19 +109,34 @@ const openModal = (e) => {
                 modalMetodospago.innerHTML ='Metodos de pago: ' + state.nuevoEstadoTarjetas[i].metodospago;
                 modalUbicacion.innerHTML ='Ubicacion: ' + state.nuevoEstadoTarjetas[i].localizacion;
 
-                let galeriaDiv1 = document.createElement('div');
-                galeriaDiv1.className='item-wr slick-slide slick-current slick-active';
-                galeriaDiv1.role='option';
-                galeriaDiv1.style='width: 147px';
+            let galeriaDiv1Padre = document.createElement('div');
+                galeriaDiv1Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv1Padre.role='option';
+                galeriaDiv1Padre.style='width: 147px';
+
+            let galeriaDiv2Padre = document.createElement('div');
+                galeriaDiv2Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv2Padre.role='option';
+                galeriaDiv2Padre.style='width: 147px';
         
-            let galeriaDiv2 = document.createElement('div');
-                galeriaDiv2.className ='profile-thumbnails';
-                galeriaDiv2.style=`background-image: url(${state.galeriaImagenes[i]})`;
+            let galeriaDiv1Hijo = document.createElement('div');
+                galeriaDiv1Hijo.className ='profile-thumbnails';
+                galeriaDiv1Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto1})`;
+
+            let galeriaDiv2Hijo = document.createElement('div');
+                galeriaDiv2Hijo.className ='profile-thumbnails';
+                
+                galeriaDiv2Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto2})`;
         
-            galeriaDiv1.appendChild(galeriaDiv2);
-            slider.appendChild(galeriaDiv1);
+            
+            galeriaDiv2Padre.appendChild(galeriaDiv2Hijo);
+
+            galeriaDiv1Padre.appendChild(galeriaDiv1Hijo);
+            slider.appendChild(galeriaDiv1Padre);
+            slider.appendChild(galeriaDiv2Padre);
+
         }
-    }*/
+    }
 
     
 
