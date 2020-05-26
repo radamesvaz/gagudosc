@@ -72,7 +72,8 @@ const loadingHeader = () =>{
 
         let aListLogin = document.createElement('a');
             aListLogin.href='Log_In.html';
-            aListLogin.textContent=sessionStorage.getItem('nombre');
+           // aListLogin.textContent=sessionStorage.getItem('nombre');
+           aListLogin.textContent=('Login');
             aListLogin.target='_self';
 
 
@@ -156,9 +157,9 @@ const ingresar = (event) => {
             return data.json()
             }).then(user => {
 
-                localStorage.setItem('userId', user.id);
+                sessionStorage.setItem('userId', user.id);
                 sessionStorage.setItem('nombre', user.nombre);
-                localStorage.setItem('isSignedIn', 'true');
+                sessionStorage.setItem('isSignedIn', 'true');
                 sessionStorage.setItem('edad', user.edad);
                 sessionStorage.setItem('titulo', user.titulo);
                 sessionStorage.setItem('descripcion', user.descripcion);
@@ -203,6 +204,3 @@ $('.input100').each(function(){
 
 // ------------------------------- Perfil -------------------------------------
 
-
-
-    

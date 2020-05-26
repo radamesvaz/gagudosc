@@ -8,7 +8,8 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-        <link rel="stylesheet" href='assets/cache/css_05_model_profile.min.css'/>
+        <link rel="stylesheet" href='assets/cache/css_03_home.min.css'/>
+        <link rel="stylesheet" href='assets/cache/utility.css'/>
     </head>
     <body>
         <div id='real-header'>
@@ -16,207 +17,100 @@
         </div>
 
 
-        <main>
+        
 
-            <section class="profile-entry">
-                <div class="container">
-                    <section class="row">
-                        <div class="col-lg-6">
-                            <div class="profile-image">
-                                <div class="profile-image-inner">
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_57_784x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_58_808x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_49_766x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_50_766x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_51_769x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_44_769x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/stock_38_770x1024.jpg')"></div>
-                                    <div class="model-img-item" style="background-image: url('assets/img/demo/admiring_nature_s_beauty-wallpaper-1600x900')"></div>
+
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100">
+                        <form class="login100-form validate-form">
+                            <span class="login100-form-title p-b-26">
+                                Modificar Perfil
+                            </span>
+                            <span class="login100-form-title p-b-48">
+                                <i class="zmdi zmdi-font"></i>
+                            </span>
+        
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="nombre" id='modificar-nombre'>
+                                <span class="focus-input100" data-placeholder="Nombre"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="edad" id='modificar-edad'>
+                                <span class="focus-input100" data-placeholder="Edad"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="titulo" id='modificar-titulo'>
+                                <span class="focus-input100" data-placeholder="Titulo"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="descripcion" id='modificar-descripcion'>
+                                <span class="focus-input100" data-placeholder="Descripcion"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="telefono" id='modificar-telefono'>
+                                <span class="focus-input100" data-placeholder="Telefono"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="Localizacion" id='modificar-localizacion'>
+                                <span class="focus-input100" data-placeholder="Localizacion"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="disponibilidad" id='modificar-disponibilidad'>
+                                <span class="focus-input100" data-placeholder="Disponibilidad"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="servicios" id='modificar-servicios'>
+                                <span class="focus-input100" data-placeholder="Servicios"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="tarifas" id='modificar-tarifas'>
+                                <span class="focus-input100" data-placeholder="Tarifas"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="pago" id='modificar-pago'>
+                                <span class="focus-input100" data-placeholder="Metodos de Pago"></span>
+                            </div>
+                            
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="img-perfil" id='modificar-imagenPerfil'>
+                                <span class="focus-input100" data-placeholder="Foto Aqui"></span>
+                            </div>
+                            
+
+        
+
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <button class="login100-form-btn" id='btn-modificarPerfil'>
+                                        Modificar
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="profile-info">
-                                <header class="profile-header" id='nombre-en-el-perfil'>
-                                   
-
-                                </header>
-                                <div class="model-info" id='perfil-info'>
-                                  <!--  <p>
-                                        Age: <span>edad</span>
-                                    </p>
-                                    <p>
-                                        Height: <span>179</span>
-                                    </p>
-                                    <p>
-                                        Bust: <span>85</span>
-                                    </p>
-                                    <p>
-                                        Hair: <span>2Blond5</span>
-                                    </p>
-                                    <p>
-                                        Eyes: <span>Green</span>
-                                    </p>-->
-
-                                </div>
-
-                                <div class="model-description">
-                                    <p>
-                                        <span style="color: white">BIO</span>
-                                        : Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
-                                    </p>
-                                </div>
+        
+                            <div class="text-center p-t-115">
+                                <span class="txt1">
+                                    ¿No tienes una cuenta?
+                                </span>
+        
+                                <a class="txt2" href="Register.html">
+                                    Regístrate
+                                </a>
                             </div>
-                        </div>
-                    </section>
-                    <div class="profile-more-photos">
-                        <header class="block-header">
-                            <p>Photos</p>
-                            <a href="#">
-                                See all<i class="fa fa-plus" aria-hidden="true"></i>
-                            </a>
-                        </header>
-                        <div class="profile-thumbnails-wr">
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_57_784x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_58_808x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_49_766x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_50_766x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_51_769x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_44_769x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_38_770x1024.jpg)"></div>
-                            </div>
-                            <div class="item-wr">
-                                <div class="profile-thumbnails" style="background-image: url(assets/img/demo/stock_36_769x1024.jpg)"></div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-            <section class="profile-reviews container">
-                <div class="row">
-                    <aside class="col-lg-3 sidebar">
-                        <header class="block-header">
-                            <p>Agency</p>
-                        </header>
-                        <a href="11_Agancy_Profile.html" class="agancy-logo">
-                            <p>Logo</p>
-                            <p>goes here</p>
-                        </a>
-                        <div class="model-contacts">
-                            <p class="place">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>251 W 48th St, New York, NY 10036</span>
-                            </p>
-                            <p class="phone">
-                                <i class="fa fa-mobile" aria-hidden="true"></i>
-                                <a href="tel:+1 212-380-1195">+1 212-380-1195</a>
-                            </p>
-                            <p class="info">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <a href="mailto:support@topmodels.com">support@topmodels.com</a>
-                            </p>
-                        </div>
-                    </aside>
-                    <section class="col-lg-9 order-lg-first">
-                        <div class="rewiew-section">
-                            <header class="block-header">
-                                <p>Recent Reviews</p>
-                            </header>
-                            <section class="all-review">
-                                <article class="review-item">
-                                    <header class="review-header">
-                                        <h3 class="review-author">Andrea Stone</h3>
-                                        <p class="publish-date">June 6, 2017</p>
-                                    </header>
-                                    <div class="review-content">
-                                        <p>I love your boho romper and dresses. Where did you get them all?</p>
-                                    </div>
-                                </article>
-                                <article class="review-item">
-                                    <header class="review-header">
-                                        <h3 class="review-author">Marie Hoola</h3>
-                                        <p class="rating">
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </p>
-                                        <p class="publish-date">June 6, 2017</p>
-                                    </header>
-                                    <div class="review-content">
-                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
-                                    </div>
-                                </article>
-                                <article class="review-item">
-                                    <header class="review-header">
-                                        <h3 class="review-author">Sergio Green</h3>
-                                        <p class="publish-date">June 6, 2017</p>
-                                    </header>
-                                    <div class="review-content">
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam acurn felis dapibus condimentum sit amet a augue. Sed non neque elit. Proin condimentum fermentum nunc. </p>
-                                    </div>
-                                </article>
-                                <article class="review-item">
-                                    <header class="review-header">
-                                        <h3 class="review-author">Nataly Portman</h3>
-                                        <p class="rating">
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star active" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </p>
-                                        <p class="publish-date">June 6, 2017</p>
-                                    </header>
-                                    <div class="review-content">
-                                        <p>I am obsesseed with this dress omg!!</p>
-                                    </div>
-                                </article>
-                            </section>
-                            <form action="" id="rate-form" class="form rate-form">
-                                <p class="title">Write Review</p>
-                                <p class="form-message error">Message should not be empty</p>
-                                <p class="form-message saccess">Message sent saccessfuly</p>
-                                <div class="rate-model">
-                                    <p class="rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </p>
-                                    <span>Rate Model</span>
-                                </div>
-                                <div class="row-input">
-                                    <div class="item-wr">
-                                        <input type="text" name="name" placeholder="Your Name" class="name">
-                                    </div>
-                                    <div class="item-wr">
-                                        <input type="email" name="email" placeholder="Your Email" class="email">
-                                    </div>
-                                </div>
-                                <textarea name="review-message" placeholder="Message"></textarea>
-                                <input type="submit" value="Post Review" class="btn-classic">
-                            </form>
-                        </div>
-                    </section>
-                </div>
-            </section>
-        </main>
+            </div>
+       
 
 
         <footer class="footer">
