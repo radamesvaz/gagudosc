@@ -1,4 +1,4 @@
-//let modificarNombre = document.getElementById('modificar-nombre');
+let modificarNombre = document.getElementById('modificar-nombre');
 let modificarEdad = document.getElementById('modificar-edad');
 let modificarTitulo = document.getElementById('modificar-titulo');
 let modificarDescripcion = document.getElementById('modificar-descripcion');
@@ -9,17 +9,14 @@ let modificarServicios = document.getElementById('modificar-servicios');
 let modificarTarifas = document.getElementById('modificar-tarifas');
 let modificarPago = document.getElementById('modificar-pago');
 
-const proxyUrl = 'https://guarded-ridge-41595.herokuapp.com/';
-
-const urlPatch = `http://localhost:3000/subir-informacion/${sessionStorage.userId}`;
-
-
 const botonModificar = document.getElementById('btn-modificarPerfil');
+const botonCerrarSesion = document.getElementById('boton-cerrar-sesion');
+
 
 const modificarPerfil = (e) => {
    e.preventDefault();
    const data = { 
-     // nombre: modificarNombre.value, 
+      nombre: modificarNombre.value, 
       edad: modificarEdad.value,
       titulo: modificarTitulo.value,
       descripcion: modificarDescripcion.value,
@@ -37,6 +34,7 @@ const modificarPerfil = (e) => {
   },
       body: JSON.stringify(data)
   };
+  const urlPatch = `http://localhost:3000/subir-informacion/${sessionStorage.userId}`;
   fetch(urlPatch, options)
   .then(data => {
    return data.json()
@@ -46,37 +44,44 @@ const modificarPerfil = (e) => {
 
 }
 
+const cargandoCampos = () =>{
+
+   modificarNombre.value = sessionStorage.nombre;
+    modificarEdad.value = sessionStorage.edad;
+    modificarTitulo.value = sessionStorage.titulo;
+    modificarDescripcion.value = sessionStorage.descripcion;
+    modificarTelefono.value = sessionStorage.telefono;
+    modificarLocalizacion.value = sessionStorage.localizacion;
+    modificarDisponibilidad.value = sessionStorage.disponibilidad;
+    modificarServicios.value = sessionStorage.servicios;
+    modificarTarifas.value = sessionStorage.tarifas;
+    modificarPago.value = sessionStorage.metodospago;
+
+    $('.input100').each(function(){
+      $(this).on('blur', function(){
+          if($(this).val().trim() != "") {
+              $(this).addClass('has-val');
+          }
+          else {
+              $(this).removeClass('has-val');
+          }
+      })    
+   })
+
+}
+
+const cerrarSesion = () =>{
+   sessionStorage.clear();
+   localStorage.clear();
+}
+
+
 botonModificar.addEventListener('click', modificarPerfil);
 
+botonCerrarSesion.addEventListener('click', cerrarSesion);
 
 
 
+// ------------ Cargando la informacion de los campos
+window.addEventListener('load', cargandoCampos());
 
-let elheaderDiv = document.getElementById("nombre-en-el-perfil");
-let micrearNombrePerfil = document.createElement('h1');
-    micrearNombrePerfil.className='profile-title';
-    micrearNombrePerfil.innerHTML=sessionStorage.getItem('nombre');
-
-elheaderDiv.appendChild(micrearNombrePerfil);
-
-
-/*
- for(let i = 0; i < sessionStorage.length; i++){
-     let divsInformativosPerfil = document.getElementById('perfil-info');
-     let textoPerfil = document.createElement('p');
-
-        textoPerfil.textContent= 'nombre: ' + sessionStorage.getItem('nombre');
-     //   textoPerfil.textContent= 'ubicacion: ' + sessionStorage.getItem('localizacion');
-
-    divsInformativosPerfil.appendChild(textoPerfil);
- }
- 
-
- for (const [key, value] of Object.entries(sessionStorage)){
-    let divsInformativosPerfil = document.getElementById('perfil-info');
-    let textoPerfil = document.createElement('p');
-
-    textoPerfil.textContent= `${key}:   ${value}`;
-
-    divsInformativosPerfil.appendChild(textoPerfil);
- }*/
