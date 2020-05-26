@@ -37,7 +37,7 @@ const modificarPerfil = (e) => {
   },
       body: JSON.stringify(data)
   };
-  fetch(proxyUrl + urlPatch, options)
+  fetch(urlPatch, options)
   .then(data => {
    return data.json()
       }).then(user => {
