@@ -49,7 +49,7 @@ if(nombreRegistro.value == ''){
         },
             body: JSON.stringify(data)
         };
-        fetch('http://localhost:3000/registro', options)
+        fetch('https://pure-lake-94197.herokuapp.com/registro', options)
         .then(data => {
             return data.json()
             }).then(console.log);

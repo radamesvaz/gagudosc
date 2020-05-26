@@ -152,7 +152,7 @@ const ingresar = (event) => {
         },
             body: JSON.stringify(data)
         };
-        fetch('http://localhost:3000/iniciar-sesion', options)
+        fetch('https://pure-lake-94197.herokuapp.com/iniciar-sesion', options)
         .then(data => {
             return data.json()
             }).then(user => {

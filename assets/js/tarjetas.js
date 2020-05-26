@@ -164,7 +164,7 @@ window.addEventListener('load',
     const options = {
         method: 'get'
     };
-    fetch('http://localhost:3000/home', options)
+    fetch('https://pure-lake-94197.herokuapp.com/home', options)
     .then(data => {
         return data.json()
         }).then( res => {
@@ -180,7 +180,7 @@ window.addEventListener('load',
    const options = {
        method: 'get'
    };
-   fetch('http://localhost:3000/home-galeria', options)
+   fetch('https://pure-lake-94197.herokuapp.com/home-galeria', options)
    .then(data => {
        return data.json()
        }).then( res => {

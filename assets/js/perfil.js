@@ -34,7 +34,7 @@ const modificarPerfil = (e) => {
   },
       body: JSON.stringify(data)
   };
-  const urlPatch = `http://localhost:3000/subir-informacion/${sessionStorage.userId}`;
+  const urlPatch = `https://pure-lake-94197.herokuapp.com/subir-informacion/${sessionStorage.userId}`;
   fetch(urlPatch, options)
   .then(data => {
    return data.json()
