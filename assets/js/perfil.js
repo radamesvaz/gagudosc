@@ -26,6 +26,7 @@ const modificarPerfil = (e) => {
       tarifas: modificarTarifas.value,
       metodospago: modificarPago.value 
   }
+  
   const options = {
       method: 'PATCH',
       headers: {
