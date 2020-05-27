@@ -2,7 +2,7 @@
 
 // ------------------- Creando SessionStorage
 
-
+// https://pure-lake-94197.herokuapp.com/iniciar-sesion
 
 
 //--------------------------- Creando el menu --------------------
@@ -152,7 +152,7 @@ const ingresar = (event) => {
         },
             body: JSON.stringify(data)
         };
-        fetch('https://pure-lake-94197.herokuapp.com/iniciar-sesion', options)
+        fetch('http://localhost:3000/iniciar-sesion', options)
         .then(data => {
             return data.json()
             }).then(user => {
