@@ -118,6 +118,32 @@ const openModal = (e) => {
                 galeriaDiv2Padre.className='item-wr slick-slide slick-current slick-active';
                 galeriaDiv2Padre.role='option';
                 galeriaDiv2Padre.style='width: 147px';
+
+            let galeriaDiv3Padre = document.createElement('div');
+                galeriaDiv3Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv3Padre.role='option';
+                galeriaDiv3Padre.style='width: 147px';
+
+            let galeriaDiv4Padre = document.createElement('div');
+                galeriaDiv4Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv4Padre.role='option';
+                galeriaDiv4Padre.style='width: 147px';
+
+            let galeriaDiv5Padre = document.createElement('div');
+                galeriaDiv5Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv5Padre.role='option';
+                galeriaDiv5Padre.style='width: 147px';
+
+            let galeriaDiv6Padre = document.createElement('div');
+                galeriaDiv6Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv6Padre.role='option';
+                galeriaDiv6Padre.style='width: 147px';
+
+            let galeriaDiv7Padre = document.createElement('div');
+                galeriaDiv7Padre.className='item-wr slick-slide slick-current slick-active';
+                galeriaDiv7Padre.role='option';
+                galeriaDiv7Padre.style='width: 147px';
+
         
             let galeriaDiv1Hijo = document.createElement('div');
                 galeriaDiv1Hijo.className ='profile-thumbnails';
@@ -125,15 +151,45 @@ const openModal = (e) => {
 
             let galeriaDiv2Hijo = document.createElement('div');
                 galeriaDiv2Hijo.className ='profile-thumbnails';
-                
                 galeriaDiv2Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto2})`;
-        
-            
-            galeriaDiv2Padre.appendChild(galeriaDiv2Hijo);
+                
+            let galeriaDiv3Hijo = document.createElement('div');
+                galeriaDiv3Hijo.className ='profile-thumbnails';
+                galeriaDiv3Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto3})`;
 
+            let galeriaDiv4Hijo = document.createElement('div');
+                galeriaDiv4Hijo.className ='profile-thumbnails';
+                galeriaDiv4Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto4})`;
+            
+            let galeriaDiv5Hijo = document.createElement('div');
+                galeriaDiv5Hijo.className ='profile-thumbnails';
+                galeriaDiv5Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto5})`;
+
+            let galeriaDiv6Hijo = document.createElement('div');
+                galeriaDiv6Hijo.className ='profile-thumbnails';
+                galeriaDiv6Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto6})`;
+
+            let galeriaDiv7Hijo = document.createElement('div');
+                galeriaDiv7Hijo.className ='profile-thumbnails';
+                galeriaDiv7Hijo.style=`background-image: url(${state.galeriaImagenes[i].foto7})`;
+
+            galeriaDiv7Padre.appendChild(galeriaDiv7Hijo);
+            galeriaDiv6Padre.appendChild(galeriaDiv6Hijo);
+            galeriaDiv5Padre.appendChild(galeriaDiv5Hijo);
+            galeriaDiv4Padre.appendChild(galeriaDiv4Hijo);
+            galeriaDiv3Padre.appendChild(galeriaDiv3Hijo);
+            galeriaDiv2Padre.appendChild(galeriaDiv2Hijo);
             galeriaDiv1Padre.appendChild(galeriaDiv1Hijo);
+
+
             slider.appendChild(galeriaDiv1Padre);
             slider.appendChild(galeriaDiv2Padre);
+            slider.appendChild(galeriaDiv3Padre);
+            slider.appendChild(galeriaDiv4Padre);
+            slider.appendChild(galeriaDiv5Padre);
+            slider.appendChild(galeriaDiv6Padre);
+            slider.appendChild(galeriaDiv7Padre);
+
 
         }
     }
