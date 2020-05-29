@@ -1,16 +1,86 @@
-let btnPerfil = document.getElementById('btn-foto-perfil');
+let btnPerfil = document.getElementById('btn-perfil');
+let fotoPerfil = document.getElementById('foto-perfil');
+let btnPerfilPrueba = document.getElementById('btn-subir-archivos');
+let textoPerfil = document.getElementById('prueba-texto-archivos');
+
+ btnPerfilPrueba.addEventListener('click', function(){
+    fotoPerfil.click();
+    
+});
+
+fotoPerfil.addEventListener('change', function(){
+    if(fotoPerfil.value){
+        textoPerfil.innerHTML = fotoPerfil.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+    }else {
+        textoPerfil.innerHTML = 'Sin Imagen';
+    }
+})
+
+
 let btnGaleriaImg1 = document.getElementById('btn-galeria-img1');
+let galeriaImg1 = document.getElementById('foto-galeria-img1');
+let btnAbrirGaleria1 = document.getElementById('btn-subir-archivos1');
+let textoGaleria1 = document.getElementById('prueba-texto-archivos1');
+
+btnAbrirGaleria1.addEventListener('click', function(){
+    galeriaImg1.click();
+});
+
+galeriaImg1.addEventListener('change', function(){
+    if(galeriaImg1.value){
+        textoGaleria1.innerHTML = galeriaImg1.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+    }else {
+        textoGaleria1.innerHTML = 'Sin Imagen';
+    }
+})
+
+
 let btnGaleriaImg2 = document.getElementById('btn-galeria-img2');
+let galeriaImg2 = document.getElementById('foto-galeria-img2');
+let btnAbrirGaleria2 = document.getElementById('btn-subir-archivos2');
+let textoGaleria2 = document.getElementById('prueba-texto-archivos2');
+
+btnAbrirGaleria2.addEventListener('click', function(){
+    galeriaImg2.click();
+});
+
+galeriaImg2.addEventListener('change', function(){
+    if(galeriaImg2.value){
+        textoGaleria2.innerHTML = galeriaImg2.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+    }else {
+        textoGaleria2.innerHTML = 'Sin Imagen';
+    }
+})
+
+
 let btnGaleriaImg3 = document.getElementById('btn-galeria-img3');
+let galeriaImg3 = document.getElementById('foto-galeria-img3');
+let btnAbrirGaleria3 = document.getElementById('btn-subir-archivos3');
+let textoGaleria3 = document.getElementById('prueba-texto-archivos3');
+
+btnAbrirGaleria3.addEventListener('click', function(){
+    galeriaImg3.click();
+});
+
+galeriaImg3.addEventListener('change', function(){
+    if(galeriaImg3.value){
+        textoGaleria3.innerHTML = galeriaImg3.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+    }else {
+        textoGaleria3.innerHTML = 'Sin Imagen';
+    }
+})
+
+
+
 let btnGaleriaImg4 = document.getElementById('btn-galeria-img4');
 let btnGaleriaImg5 = document.getElementById('btn-galeria-img5');
 let btnGaleriaImg6 = document.getElementById('btn-galeria-img6');
 let btnGaleriaImg7 = document.getElementById('btn-galeria-img7');
 
-let fotoPerfil = document.getElementById('foto-perfil');
-let galeriaImg1 = document.getElementById('foto-galeria-img1');
-let galeriaImg2 = document.getElementById('foto-galeria-img2');
-let galeriaImg3 = document.getElementById('foto-galeria-img3');
+
+
+
+
 let galeriaImg4 = document.getElementById('foto-galeria-img4');
 let galeriaImg5 = document.getElementById('foto-galeria-img5');
 let galeriaImg6 = document.getElementById('foto-galeria-img6');
@@ -39,7 +109,7 @@ subirFotoPerfil = (e) => {
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/foto-perfil/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/foto-perfil/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -64,7 +134,7 @@ subirFotoGaleria1 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto1/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto1/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -89,7 +159,7 @@ subirFotoGaleria2 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto2/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto2/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -114,7 +184,7 @@ subirFotoGaleria3 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto3/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto3/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -139,7 +209,7 @@ subirFotoGaleria4 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto4/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto4/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -164,7 +234,7 @@ subirFotoGaleria5 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto5/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto5/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -189,7 +259,7 @@ subirFotoGaleria6 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto6/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto6/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -214,7 +284,7 @@ subirFotoGaleria7 = (e) =>{
         formData.append("image", blobFile);
     
         $.ajax({
-           url: `http://localhost:3000/galeria-foto7/${sessionStorage.userId}`,
+           url: `https://pure-lake-94197.herokuapp.com/galeria-foto7/${sessionStorage.userId}`,
            type: "PATCH",
            data: formData,
            processData: false,
@@ -241,3 +311,4 @@ btnGaleriaImg4.addEventListener('click', subirFotoGaleria4);
 btnGaleriaImg5.addEventListener('click', subirFotoGaleria5);
 btnGaleriaImg6.addEventListener('click', subirFotoGaleria6);
 btnGaleriaImg7.addEventListener('click', subirFotoGaleria7);
+

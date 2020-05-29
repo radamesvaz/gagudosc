@@ -49,15 +49,33 @@ if(nombreRegistro.value == ''){
         },
             body: JSON.stringify(data)
         };
-        fetch('http://localhost:3000/registro', options)
+        fetch('https://pure-lake-94197.herokuapp.com/registro', options)
         .then(data => {
             return data.json()
-            }).then(console.log);
+            }).then(user => {
+    
+                    sessionStorage.setItem('userId', user.id);
+                    sessionStorage.setItem('nombre', user.nombre);
+                    sessionStorage.setItem('isSignedIn', 'true');
+                    sessionStorage.setItem('edad', user.edad);
+                    sessionStorage.setItem('titulo', user.titulo);
+                    sessionStorage.setItem('descripcion', user.descripcion);
+                    sessionStorage.setItem('telefono', user.telefono);
+                    sessionStorage.setItem('localizacion', user.localizacion);
+                    sessionStorage.setItem('disponibilidad', user.disponibilidad);
+                    sessionStorage.setItem('tags', user.tags);
+                    sessionStorage.setItem('tarifas', user.tarifas);
+                    sessionStorage.setItem('metodospago', user.metodospago);
+                
+                    email.value='';
+                    password.value='';
 
-            emailRegistro.value='';
-            nombreRegistro.value='';
-            passwordRegistro.value='';
-            verifyPassword.value='';
+                    window.open("perfil.html", '_self' );
+                
+
+            
+            
+        })
     }else{
         console.log('campos incorrectos');
     }

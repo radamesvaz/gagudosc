@@ -8273,7 +8273,7 @@ a.bg-dark:focus,a.bg-dark:hover {
 }
 
 .text-center {
-    text-align: center!important
+     text-align: center!important 
 }
 
 @media (min-width: 576px) {
@@ -16470,8 +16470,90 @@ body.light {
       opacity: 1;
     }
   }
+  /* Login */
+  .error{
+      color: red;
+      display: none;
+  }
+  /* Perfil */
+.center-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+  .btn-borrar{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(255,0,0,0.3);
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 10px 42px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    outline: none;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    cursor: pointer;
+}
   
-  
-  
-  
-  
+.btn-borrar:hover {
+    color: white !important;
+    background-color:rgba(255,0,0,0.9);
+}
+
+/* Modificar Galeria Imagenes */
+  .prueba-subir-archivos{
+      padding: 5px;
+      color: #ff8500;
+      font-size: small;
+      background-color: white;
+      border: 1px solid #000;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .prueba-subir-archivos:hover{
+    background-color: #626264;
+    color: white;
+}
+
+.prueba-texto-archivos{
+    font-size: smaller;
+    white-space: pre-line;
+}
+
+.boton-prueba-archivos{
+    padding: 10px;
+    width: 100px;
+    color: #ff8500;
+    font-size: small;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.boton-prueba-archivos:hover{
+    background-color: #FF8500;
+    color: white;
+}
+
+.border-imagen{
+    
+    padding: 10px;
+    text-align: center;
+    
+}

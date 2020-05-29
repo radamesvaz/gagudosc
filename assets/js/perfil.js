@@ -9,9 +9,12 @@ let modificarServicios = document.getElementById('modificar-servicios');
 let modificarTarifas = document.getElementById('modificar-tarifas');
 let modificarPago = document.getElementById('modificar-pago');
 
+
 const botonModificar = document.getElementById('btn-modificarPerfil');
 const botonCerrarSesion = document.getElementById('boton-cerrar-sesion');
-
+const botonBorrarPerfil = document.querySelector('#btn-borrar-perfil');
+const siPerfil = document.querySelector('#borrar-perfil-si');
+const noPerfil = document.querySelector('#borrar-perfil-no');
 
 const modificarPerfil = (e) => {
    e.preventDefault();
@@ -35,7 +38,7 @@ const modificarPerfil = (e) => {
   },
       body: JSON.stringify(data)
   };
-  const urlPatch = `http://localhost:3000/subir-informacion/${sessionStorage.userId}`;
+  const urlPatch = `https://pure-lake-94197.herokuapp.com/subir-informacion/${sessionStorage.userId}`;
   fetch(urlPatch, options)
   .then(data => {
    return data.json()
@@ -76,12 +79,51 @@ const cerrarSesion = () =>{
    localStorage.clear();
 }
 
+const abrirConfirmacion = (e) => {
+    e.preventDefault();
+    let confirmar = document.querySelector('#confirmar-eliminar-perfil');
+    confirmar.style.display='block';
+}
+
+const borrarPerfilSi = (e) => {
+    e.preventDefault();
+    console.log('se va a borrar el perfil');
+    const options = {
+        method: 'delete',
+        headers: {
+           Accept: 'application/json',
+            'Content-Type': 'application/json'
+    },
+
+    };
+    fetch(`https://pure-lake-94197.herokuapp.com/borrar-perfil/${sessionStorage.userId}`, options)
+    .then(data => {
+     return data.json()
+        }).then(user => {
+           console.log(user);
+           sessionStorage.clear();
+           window.open("index.html", '_self' );
+    })
+
+  }
+    
+
+
+const borrarPerfilNo = (e) => {
+    e.preventDefault();
+    let confirmar = document.querySelector('#confirmar-eliminar-perfil');
+    confirmar.style.display='none';
+}
 
 botonModificar.addEventListener('click', modificarPerfil);
 
 botonCerrarSesion.addEventListener('click', cerrarSesion);
 
+botonBorrarPerfil.addEventListener('click', abrirConfirmacion);
 
+siPerfil.addEventListener('click', borrarPerfilSi);
+
+noPerfil.addEventListener('click', borrarPerfilNo);
 
 // ------------ Cargando la informacion de los campos
 window.addEventListener('load', cargandoCampos());
