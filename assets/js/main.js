@@ -1,7 +1,5 @@
 
 
-// ------------------- Creando SessionStorage
-
 // https://pure-lake-94197.herokuapp.com/iniciar-sesion
 
 
@@ -42,6 +40,7 @@ const loadingHeader = () =>{
             nav.className='navigation';
 
         let ulNav = document.createElement('ul');
+            ulNav.id='nav-menu';
 
         let liNav1 = document.createElement('li');
             liNav1.className='menu-item';
@@ -66,16 +65,21 @@ const loadingHeader = () =>{
             aListRegistro.href='Register.html';
             aListRegistro.textContent='Registrarse';
             aListRegistro.target='_self';
+/*
+            if(sessionStorage.isSignedIn == 'true'){
 
-        let liNav4 = document.createElement('li');
-            liNav4.className = 'menu-item';
+            let liNav4 = document.createElement('li');
+                liNav4.className = 'menu-item';
 
-        let aListLogin = document.createElement('a');
-            aListLogin.href='Log_In.html';
-           // aListLogin.textContent=sessionStorage.getItem('nombre');
-           aListLogin.textContent=('Login');
-            aListLogin.target='_self';
+            let aListLogin = document.createElement('a');
+                aListLogin.href='perfil.html';
+                aListLogin.textContent=sessionStorage.getItem('nombre');
+                aListLogin.target='_self';
 
+                liNav4.appendChild(aListLogin);
+                ulNav.appendChild(liNav4);
+
+            }*/
 
         let iResponsive = document.createElement('i');
             iResponsive.className='fa fa-times';
@@ -88,14 +92,14 @@ const loadingHeader = () =>{
 
 
 
-        liNav4.appendChild(aListLogin);
+        
         liNav3.appendChild(aListRegistro);
         liNav2.appendChild(aListTarjetas);
         liNav1.appendChild(aListHome);
         ulNav.appendChild(liNav1);
         ulNav.appendChild(liNav2);
         ulNav.appendChild(liNav3);
-        ulNav.appendChild(liNav4);
+        
         nav.appendChild(ulNav);
         div3.appendChild(nav);
         div3.appendChild(iResponsive);
@@ -111,14 +115,27 @@ const loadingHeader = () =>{
         header.appendChild(div1);
         realHeader.appendChild(header);
         
+        if(sessionStorage.isSignedIn == 'true'){
+    
+
+            let liNav4 = document.createElement('li');
+            liNav4.className = 'menu-item';
+        
+            let aListLogin = document.createElement('a');
+                aListLogin.href='perfil.html';
+                aListLogin.textContent=sessionStorage.getItem('nombre');
+                aListLogin.target='_self';
+        
+            liNav4.appendChild(aListLogin);
+            ulNav.appendChild(liNav4);
+            
+        }
         
     }
 
 
 
 window.addEventListener('load', loadingHeader());
-
-
 
 
 
@@ -130,9 +147,5 @@ const removeElementsByClass = (elementName) => {
     }
 };
 
-// --------------------------------  Login ------------------------------------
-
-
-
-// ------------------------------- Perfil -------------------------------------
+// Si el usuario ha iniciado sesion
 
